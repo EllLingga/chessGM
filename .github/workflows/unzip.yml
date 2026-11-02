@@ -1,0 +1,20 @@
+name: unzip
+on: push
+permissions:
+  contents: write
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          if ls *.zip >/dev/null 2>&1; then
+            unzip -q -o *.zip
+            cp -r grandmaster/. .
+            rm -rf grandmaster *.zip
+            git config user.name "bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add -A
+            git commit -m "extract project"
+            git push
+          fi
