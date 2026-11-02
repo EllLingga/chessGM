@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { background: #171717; color: #e5e5e5; }
+
+@layer components {
+  .btn { @apply px-3 py-1.5 rounded-lg bg-neutral-800 text-sm hover:bg-neutral-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors; }
+  .btn-primary { @apply px-4 py-2 rounded-lg bg-accent text-black font-semibold text-sm hover:brightness-110 disabled:opacity-40 disabled:cursor-not-allowed transition; }
+  .btn-danger { @apply px-3 py-1.5 rounded-lg bg-red-900/60 text-red-200 text-sm hover:bg-red-800 disabled:opacity-40 disabled:cursor-not-allowed; }
+  .card { @apply rounded-xl border border-line bg-panel p-4; }
+  .input { @apply w-full rounded-lg bg-neutral-900 border border-line px-3 py-2 text-sm outline-none focus:border-accent; }
+  .label { @apply block text-xs text-neutral-400 mb-1; }
+  .h-sec { @apply text-xs tracking-widest text-neutral-400 mb-3; }
+}
